@@ -1,0 +1,13 @@
+comonomer_name,comonomer_smiles,canonical_smiles,n_rows,n_sources,frac_min,frac_max
+HMAAm,C=CC(=O)NCO,C=CC(=O)NCO,9,5,0.094,0.333
+DMAAm,C=CC(=O)N(C)C,C=CC(=O)N(C)C,8,3,0.011,0.305
+DMMDO,C=C1COC(C)(C)O1,C=C1COC(C)(C)O1,6,1,0.008,0.13
+DMMDO_deprotected,C=C(O)CO,C=C(O)CO,6,1,0.008,0.13
+AAc,C=CC(=O)O,C=CC(=O)O,5,1,0.0991,0.1935
+NtBAm,C=CC(=O)NC(C)(C)C,C=CC(=O)NC(C)(C)C,5,2,0.06,0.2
+HEMA,C=C(C)C(=O)OCCO,C=C(C)C(=O)OCCO,3,1,0.043,0.157
+DHPMA,C=C(C)C(=O)OCC(O)CO,C=C(C)C(=O)OCC(O)CO,3,1,0.3421,0.5798
+VI,C=Cn1ccnc1,C=Cn1ccnc1,3,1,0.069,0.1285
+HEAAm,C=CC(=O)NCCO,C=CC(=O)NCCO,3,1,0.1803,0.4923
+styrene,C=Cc1ccccc1,C=Cc1ccccc1,3,1,0.045,0.157
+DMAPAAm,C=CC(=O)NCCCN(C)C,C=CC(=O)NCCCN(C)C,1,1,0.06,0.06
