@@ -12,3 +12,4 @@ venv/
 *.toc
 README.pdf
 notes/research_note.pdf
+data/pdfs/
