@@ -28,6 +28,20 @@ Round 2: PDFs supplied by the user (kept in data/pdfs/, not committed). Text pul
 | Goncalves2025_JDDST_112_107244 | Goncalves A et al., J Drug Deliv Sci Technol 2025, 112, 107244 | 10.1016/j.jddst.2025.107244 | Table 1, HMAAm in water and PBS 7.4 (pH 6.5 column not used) |
 | Feil1993_Macromolecules_26_2496 | Feil H, Bae YH, Feijen J, Kim SW, Macromolecules 1993, 26, 2496 | 10.1021/ma00062a016 | BMA series only (Table I no-X polymer + Fig. 2 digitized) |
 
+### Secondary rows compiled in Hayakawa 2023 ESI (Tables S1-S7)
+
+Values, compositions and GPC molecular weights as listed in the ESI; comonomer structures read from main-text Scheme 1 and ESI Fig. S3. The ESI gives concentration (5 mg/mL) but not method, solvent or whether composition is feed or polymer, so these rows carry lcst_method = other and a "secondary" note.
+
+| source key | original paper (as cited in the ESI) | comonomers |
+|---|---|---|
+| Hiruta2016_Analyst_141_910 | Hiruta Y et al., Analyst 2016, 141, 910 | APheOMe, ATrpOMe |
+| Nishio2012_JChromatogrA_1228_148 | Nishio T et al., J Chromatogr A 2012, 1228, 148 | ANalOMe (+ PNIPAM) |
+| Hiruta2014_ACSMacroLett_3_281 | Hiruta Y et al., ACS Macro Lett 2014, 3, 281 | BMA, DMAPMAm (+ PNIPAM) |
+| Kanazawa2006_JChromatogrA_1106_152 | Kanazawa H et al., J Chromatogr A 2006, 1106, 152 | AProOMe |
+| Maeda2006_JColloidInterfaceSci_302_467 | Maeda T, Yamamoto K, Aoyagi T, J Colloid Interface Sci 2006, 302, 467 | HIPAAm (+ PNIPAM) |
+
+Non-NIPAM ESI rows (N-vinylpyrrolidones, DMAAm/proline) not used.
+
 ## Ebara group check set (role = ebara_check, not for training)
 
 | source key | citation | DOI | used |
@@ -57,5 +71,5 @@ Leakage flag: HMAAm (NMA) also appears in the training set (Chen2018, Liang2017,
 | Feil 1993, AAm / DEAEMA / AAc series | terpolymers on a NIPAAm:BMA 95:5 base |
 | Kim YJ, Ebara M, Aoyagi T, Angew Chem Int Ed 2012 (cell-capture web) | CIPAAm + benzophenone terpolymers; LCST values only in SI |
 | Kim 2012 STAM Fig. 5 | DSC on dry nanofibers, not solution LCST |
-| Hayakawa 2023 ESI Table S1 (28-row literature set) | ESI not obtained yet |
-| Schild 1992, Yin 2006, Chuang 2012 (Polymer, NMA nanofibers) | PDFs not obtained yet |
+| Schild 1992, Yin 2006 | PDFs not obtained |
+| Chuang 2012 (Polymer, NMA nanofibers) | download returned an Elsevier security-check page, not the PDF |
