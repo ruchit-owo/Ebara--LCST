@@ -144,7 +144,7 @@ def main():
     RES.mkdir(exist_ok=True)
     out = pd.DataFrame(rows)
     out.round(3).to_csv(RES / "metrics.csv", index=False)
-    pd.concat(logo_preds).to_csv(RES / "predictions_logo.csv", index=False)
+    pd.concat(logo_preds).round(4).to_csv(RES / "predictions_logo.csv", index=False)
 
     piv = out[out.subset == "core_uncharged"].pivot(index="model", columns="scheme", values="MAE")
     piv["gap_group_minus_random"] = piv["group_5fold"] - piv["random_5fold"]
