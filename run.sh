@@ -2,3 +2,4 @@
 set -euo pipefail
 
 python src/s1_comonomers.py
+python src/s2_descriptors.py
