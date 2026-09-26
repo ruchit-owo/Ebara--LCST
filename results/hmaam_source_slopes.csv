@@ -1,0 +1,8 @@
+role,source,n,slope_per_10mol
+ebara_check,Chen2022_FrontBioeng_10_1046147,1.0,5.05
+ebara_check,Kim2012_STAM_13_064203,2.0,6.06
+ebara_check,Niiyama2018_Polymers_10_1018,1.0,5.24
+ebara_check,Techawanitchai2011_STAM_12_044609,3.0,7.36
+train,Chen2018_Polymers_10_1259,3.0,3.23
+train,Goncalves2025_JDDST_112_107244,6.0,5.99
+train,Liang2017_Polymers_9_136,1.0,6.76

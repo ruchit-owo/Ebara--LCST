@@ -1,0 +1,21 @@
+comonomer,frac,pred,pi05,pi95,note
+HPMA,0.05,32.01,23.13,38.62,
+HPMA,0.1,32.51,23.57,39.19,
+HPMA,0.2,33.51,23.59,40.56,
+HPMA,0.3,34.51,23.72,43.28,
+HPMA,none <= 0.50,,,,fraction range predicted to give 38-40 C
+NAM,0.05,33.97,25.58,41.95,
+NAM,0.1,36.43,27.98,44.86,
+NAM,0.2,41.35,31.31,50.54,
+NAM,0.3,46.27,35.54,56.77,
+NAM,0.14-0.17,,,,fraction range predicted to give 38-40 C
+NVP,0.05,32.05,23.75,39.22,
+NVP,0.1,32.59,24.37,40.11,
+NVP,0.2,33.67,24.39,41.34,
+NVP,0.3,34.75,24.76,43.49,
+NVP,none <= 0.50,,,,fraction range predicted to give 38-40 C
+MEA,0.05,31.86,23.4,39.15,
+MEA,0.1,32.21,23.27,39.93,
+MEA,0.2,32.9,23.74,41.9,
+MEA,0.3,33.6,23.78,43.92,
+MEA,none <= 0.50,,,,fraction range predicted to give 38-40 C

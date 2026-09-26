@@ -1,0 +1,5 @@
+comonomer,logP,TPSA,HBD,logP_in_range,TPSA_in_range,HBD_in_range,leverage,leverage_threshold,nearest_train_comonomer,tanimoto_nn,domain,full_name,smiles
+HPMA,0.06,49.33,2,True,True,True,0.152,0.632,DHPMA,0.314,inside,N-(2-hydroxypropyl)methacrylamide,C=C(C)C(=O)NCC(C)O
+NAM,0.031,29.54,0,True,True,True,0.289,0.632,AProOMe,0.308,inside,N-acryloylmorpholine,C=CC(=O)N1CCOCC1
+NVP,0.752,20.31,0,True,True,True,0.159,0.632,AProOMe,0.19,inside,N-vinylpyrrolidone,C=CN1CCCC1=O
+MEA,0.362,35.53,0,True,True,True,0.273,0.632,NEAm,0.3,inside,2-methoxyethyl acrylate,C=CC(=O)OCCOC

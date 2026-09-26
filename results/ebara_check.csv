@@ -1,0 +1,15 @@
+training,entry_id,source,HMAAm_frac,frac_type,solvent,measured,pred_ridge_physics,pi05,pi95,pred_linear_frac,pred_const32,err_ridge,in_90pi
+HMAAm_held_out,E001,Techawanitchai2011_STAM_12_044609,0.1,feed_ratio,water,36.1,40.35,32.12,49.1,33.7,32.0,4.25,True
+HMAAm_held_out,E002,Techawanitchai2011_STAM_12_044609,0.2,feed_ratio,water,45.5,48.61,40.39,58.62,37.84,32.0,3.11,True
+HMAAm_held_out,E003,Techawanitchai2011_STAM_12_044609,0.3,feed_ratio,water,56.0,56.87,49.0,69.7,41.97,32.0,0.87,True
+HMAAm_held_out,E004,Niiyama2018_Polymers_10_1018,0.21,polymer_composition,PBS,43.0,47.05,36.95,57.54,38.25,32.0,4.05,True
+HMAAm_held_out,E005,Chen2022_FrontBioeng_10_1046147,0.2,polymer_composition,PBS,42.1,46.22,36.04,56.59,37.84,32.0,4.12,True
+HMAAm_held_out,E006,Kim2012_STAM_13_064203,0.03,polymer_composition,PBS,34.0,32.18,20.59,40.9,30.81,32.0,-1.82,True
+HMAAm_held_out,E007,Kim2012_STAM_13_064203,0.1,polymer_composition,PBS,38.0,37.96,26.82,47.07,33.7,32.0,-0.04,True
+HMAAm_in_training,E001,Techawanitchai2011_STAM_12_044609,0.1,feed_ratio,water,36.1,39.41,31.42,47.64,34.01,32.0,3.31,True
+HMAAm_in_training,E002,Techawanitchai2011_STAM_12_044609,0.2,feed_ratio,water,45.5,47.32,38.55,56.64,38.16,32.0,1.82,True
+HMAAm_in_training,E003,Techawanitchai2011_STAM_12_044609,0.3,feed_ratio,water,56.0,55.22,45.3,65.89,42.32,32.0,-0.78,True
+HMAAm_in_training,E004,Niiyama2018_Polymers_10_1018,0.21,polymer_composition,PBS,43.0,46.05,37.22,55.72,38.58,32.0,3.05,True
+HMAAm_in_training,E005,Chen2022_FrontBioeng_10_1046147,0.2,polymer_composition,PBS,42.1,45.26,36.53,54.83,38.16,32.0,3.16,True
+HMAAm_in_training,E006,Kim2012_STAM_13_064203,0.03,polymer_composition,PBS,34.0,31.82,23.39,39.92,31.1,32.0,-2.18,True
+HMAAm_in_training,E007,Kim2012_STAM_13_064203,0.1,polymer_composition,PBS,38.0,37.35,29.07,45.94,34.01,32.0,-0.65,True
