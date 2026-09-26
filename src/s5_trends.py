@@ -209,6 +209,8 @@ def main():
     print(t2.round(2).to_string(index=False))
     print("\nRidge (physics) standardized coefficients:")
     print(ct.round(2).to_string(index=False))
+    print(f"\ncorrelation frac_x_dlogP vs frac_x_dTPSA across rows: {r_lt:.2f}")
+    print(sens.round(2).to_string(index=False))
 
 
 if __name__ == "__main__":
