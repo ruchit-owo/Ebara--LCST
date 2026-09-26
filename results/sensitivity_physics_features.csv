@@ -1,0 +1,4 @@
+features,group_MAE_core,group_MAE_no_amino_acid_esters
+all physics features,4.3,5.21
+without dTPSA,7.19,5.97
+"without dTPSA, dHBD",6.2,5.77
