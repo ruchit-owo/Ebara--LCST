@@ -1,0 +1,5 @@
+step,n_before,n_dropped,n_after,rule
+missing,4226,16,4210,value missing for at least one comonomer
+constant,4210,2177,2033,same value for every comonomer
+near_constant,2033,190,1843,fewer than 4 of 22 comonomers differ from the most common value
+correlated,1843,1373,470,"|r| > 0.95 with a feature kept earlier (RDKit columns first, then alvaDesc export order)"

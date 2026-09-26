@@ -53,12 +53,10 @@ def main():
     cdesc = cdesc.rename(columns={c: f"co_{c}" for c in dcols})
 
     if ALVA_EXPORT.exists():
-        alva = pd.read_csv(ALVA_EXPORT, sep="\t")
-        alva = alva.rename(columns={alva.columns[0]: "comonomer_name"})
-        alva = alva[alva["comonomer_name"] != "NIPAM"]
-        alva = alva.rename(columns={c: f"alva_{c}" for c in alva.columns if c != "comonomer_name"})
-        cdesc = cdesc.merge(alva, on="comonomer_name", how="left")
-        print(f"alvaDesc descriptors joined: {alva.shape[1] - 1}")
+        alva = pd.read_csv(ALVA_EXPORT, sep=r"\t", engine="python", na_values=["na", "NaN"])
+        alva = alva.drop(columns=["No."]).rename(columns={"NAME": "comonomer_name"})
+        alva.to_csv(PROC / "descriptors_alvadesc.csv", index=False)
+        print(f"alvaDesc export: {alva.shape[0]} molecules x {alva.shape[1] - 1} descriptors (joined in Stage 3)")
     else:
         print("no alvaDesc export found; RDKit set only")
 
