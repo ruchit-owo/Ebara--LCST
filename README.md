@@ -25,7 +25,7 @@ pip install -r requirements.txt
 bash run.sh
 ```
 
-The stages 1 to 6 are run in order by `run.sh`, and the whole analysis is rebuilt from `data/raw/` in about 7 minutes. Most of this time is taken by Stage 4.
+The stages 1 to 7 are run in order by `run.sh`, and the whole analysis is rebuilt from `data/raw/` in about 7 minutes. Most of this time is taken by Stage 4.
 
 ## What each stage does
 
@@ -37,6 +37,7 @@ The stages 1 to 6 are run in order by `run.sh`, and the whole analysis is rebuil
 | `src/s4_model.py` | baselines, ridge, random forest, and boosting are trained; random 5-fold, grouped 5-fold, and leave-one-comonomer-out validation are applied | `results/metrics.csv`, `results/predictions_logo.csv` |
 | `src/s5_trends.py` | the logP trend at fixed fraction, the composition series, and the coefficients are examined | `results/trend*.csv`, `results/coefficients_ridge_physics.csv`, figures |
 | `src/s6_ebara_predict.py` | the Ebara HMAAm check is run with HMAAm held out; new copolymers are predicted with an applicability-domain check | `results/ebara_check.csv`, `results/new_predictions.csv`, `results/applicability_domain.csv`, figures |
+| `src/s7_summary_figures.py` | the summary and dataset-overview figures are drawn | `results/figures/results_summary.png`, `results/figures/dataset_overview.png` |
 
 ## Folder guide
 
@@ -46,7 +47,8 @@ data/processed/    comonomers, descriptors, model table, cleaned features
 data/sources.md    all sources, what was taken from each, and what was left out and why
 data/pdfs/         paper PDFs used for extraction (git-ignored, not included in the repo)
 results/           metrics, predictions, trend tables, figures/
-notes/             research_note.md
+notes/             research_note.tex and research_note.md
+README.tex         LaTeX version of this file (pdflatex README.tex)
 SPEC.md            the spec that was followed, and the changelog
 ```
 

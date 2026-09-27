@@ -7,3 +7,4 @@ python src/s3_clean.py
 python src/s4_model.py
 python src/s5_trends.py
 python src/s6_ebara_predict.py
+python src/s7_summary_figures.py
