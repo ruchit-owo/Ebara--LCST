@@ -21,7 +21,7 @@ def main():
     X = rd
     if ALVA.exists():
         al = pd.read_csv(ALVA).set_index("comonomer_name").add_prefix("al_")
-        X = rd.join(al, how="left")
+        X = rd.join(al, how="left").copy()
 
     mt = pd.read_csv(MODEL_TABLE)
     used = sorted(set(mt.loc[mt.comonomer_name != "none", "comonomer_name"]))

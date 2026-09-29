@@ -91,7 +91,9 @@ simple one: the mole fraction multiplied by the difference between the logP of t
 comonomer and that of NIPAM. The addition of 10\% of a comonomer that is much more
 hydrophobic than NIPAM is expected to lower the LCST, and the addition of a more
 hydrophilic comonomer is expected to raise it. The same construction was applied to
-polar surface area (TPSA) and to the number of H-bond donors.
+polar surface area (TPSA) and to the number of H-bond donors. The polymer
+concentration and a flag for buffer solutions were also included, and the models were
+fitted with the mole fraction itself as a further feature.
 
 Every model was required to beat two baselines: a prediction of 32\,\degC{} for every
 copolymer, and a straight line in mole fraction that ignores which comonomer is
@@ -130,12 +132,12 @@ taken as the main result.
 
 Under random splits, almost every model appeared accurate, with errors between 3.6
 and 4.5\,\degC{} (Table~\ref{tab:metrics}, Figure~\ref{fig:summary}). Under grouped
-splits, the models were clearly separated. The error of the small ridge model on four
+splits, the models were clearly separated. The error of the small ridge model on the
 fraction-weighted features increased by only 0.7\,\degC. In contrast, the error of
 the alvaDesc ridge model increased from 4.5 to 20.8\,\degC. It was found that this
 model had learned the comonomers it was trained on and gave extreme predictions for
-new ones, mostly for comonomers at high fraction whose descriptor values were outside
-the training range. It had been expected that the large descriptor set would improve
+new ones; the largest errors (22 to 32\,\degC{} in leave-one-comonomer-out validation)
+were obtained for HIPAAm, DHPMA, styrene, and N-tert-butylacrylamide. It had been expected that the large descriptor set would improve
 the predictions, but this was not the case.
 
 With the fraction multiplied by logP alone, the mole-fraction baseline was beaten by
@@ -180,7 +182,7 @@ at 10\,mol\% with that comonomer held out, the same order was obtained from the 
 For the composition dependence, the held-out predictions were compared with the
 measured series (Figure~\ref{fig:trend2}). For DMAAm (17 rows from 5 papers), a shift
 of 5.1\,\degC{} per 10\,mol\% was predicted, which is the same as the measured value.
-For N-ethylacrylamide, 3.6\,\degC{} was predicted against 3.4\,\degC{} measured. The
+For N-ethylacrylamide, 3.9\,\degC{} was predicted against 3.6\,\degC{} measured. The
 direction was correct for all six series that were examined, but the size of the
 shift was underestimated for N-tert-butylacrylamide and HIPAAm and overestimated for
 HMAAm (8.1 against 5.1\,\degC{} per 10\,mol\%).

@@ -39,8 +39,9 @@ during training, including the HMAAm copolymers reported by the Ebara group.
 
 \section*{Main result}
 
-It was found that a ridge regression on four fraction-weighted features (the change
-in logP, polar surface area, and H-bond donors of the comonomer relative to NIPAM)
+It was found that a ridge regression on the mole fraction and three fraction-weighted
+features (the change in logP, polar surface area, and H-bond donors of the comonomer
+relative to NIPAM), together with the polymer concentration and a buffer flag,
 predicted the LCST of held-out comonomers with a mean absolute error of 4.3\,\degC.
 For comparison, an error of 8.9\,\degC{} was obtained when 32\,\degC{} was predicted
 for every copolymer, and an error of 6.6\,\degC{} was obtained with a straight line

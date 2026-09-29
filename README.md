@@ -8,7 +8,7 @@ In this project, the question of how well that temperature can be predicted from
 
 ## Main result
 
-It was found that a ridge regression on four fraction-weighted features (the change in logP, polar surface area, and H-bond donors of the comonomer relative to NIPAM) predicted the LCST of held-out comonomers with a mean absolute error of 4.3 C. For comparison, an error of 8.9 C was obtained when 32 C was predicted for every copolymer, and an error of 6.6 C was obtained with a straight line in mole fraction.
+It was found that a ridge regression on the mole fraction and three fraction-weighted features (the change in logP, polar surface area, and H-bond donors of the comonomer relative to NIPAM), together with the polymer concentration and a buffer flag, predicted the LCST of held-out comonomers with a mean absolute error of 4.3 C. For comparison, an error of 8.9 C was obtained when 32 C was predicted for every copolymer, and an error of 6.6 C was obtained with a straight line in mole fraction.
 
 For the Ebara group's HMAAm copolymers, all HMAAm rows were removed from training before the prediction was made. An error of 2.6 C was obtained across 7 measurements, and all 7 values were found inside the 90% prediction interval. The predictions were about 3 to 4 C too high near 20 mol% HMAAm.
 

@@ -25,7 +25,7 @@ The HMAAm copolymers reported by the Ebara group (seven values from four papers)
 
 ## Method
 
-RDKit descriptors were calculated for each comonomer, and alvaDesc was also used, which gives 4215 descriptors. The feature that was expected to matter most was a simple one: the mole fraction multiplied by the difference between the logP of the comonomer and that of NIPAM. The addition of 10% of a comonomer that is much more hydrophobic than NIPAM is expected to lower the LCST, and the addition of a more hydrophilic comonomer is expected to raise it. The same construction was applied to polar surface area (TPSA) and to the number of H-bond donors.
+RDKit descriptors were calculated for each comonomer, and alvaDesc was also used, which gives 4215 descriptors. The feature that was expected to matter most was a simple one: the mole fraction multiplied by the difference between the logP of the comonomer and that of NIPAM. The addition of 10% of a comonomer that is much more hydrophobic than NIPAM is expected to lower the LCST, and the addition of a more hydrophilic comonomer is expected to raise it. The same construction was applied to polar surface area (TPSA) and to the number of H-bond donors. The polymer concentration and a flag for buffer solutions were also included, and the models were fitted with the mole fraction itself as a further feature.
 
 Every model was required to beat two baselines: a prediction of 32 C for every copolymer, and a straight line in mole fraction that ignores which comonomer is present.
 
@@ -44,7 +44,7 @@ Particular attention was paid to validation. If one comonomer appears at five co
 | Ridge, all 8 RDKit descriptors | 3.8 | 6.8 |
 | Ridge, top 10 alvaDesc descriptors (selected inside each fold) | 4.5 | 20.8 |
 
-Under random splits, almost every model appeared accurate, with errors between 3.6 and 4.5 C. Under grouped splits, the models were clearly separated. The error of the small ridge model on four fraction-weighted features increased by only 0.7 C. In contrast, the error of the alvaDesc ridge model increased from 4.5 to 20.8 C. It was found that this model had learned the comonomers it was trained on and gave extreme predictions for new ones, mostly for comonomers at high fraction whose descriptor values were outside the training range. It had been expected that the large descriptor set would improve the predictions, but this was not the case.
+Under random splits, almost every model appeared accurate, with errors between 3.6 and 4.5 C. Under grouped splits, the models were clearly separated. The error of the small ridge model on the fraction-weighted features increased by only 0.7 C. In contrast, the error of the alvaDesc ridge model increased from 4.5 to 20.8 C. It was found that this model had learned the comonomers it was trained on and gave extreme predictions for new ones; the largest errors (22 to 32 C in leave-one-comonomer-out validation) were obtained for HIPAAm, DHPMA, styrene, and N-tert-butylacrylamide. It had been expected that the large descriptor set would improve the predictions, but this was not the case.
 
 With the fraction multiplied by logP alone, the mole-fraction baseline was beaten by only about half a degree. When polar surface area and H-bond donors were added, the error was reduced from 6.0 to 4.3 C.
 
@@ -56,7 +56,7 @@ It is reported in the literature that hydrophobic comonomers lower the LCST and 
 
 ![logP trend](../results/figures/trend1_logp.png)
 
-For the composition dependence, the held-out predictions were compared with the measured series. For DMAAm (17 rows from 5 papers), a shift of 5.1 C per 10 mol% was predicted, which is the same as the measured value. For N-ethylacrylamide, 3.6 C was predicted against 3.4 C measured. The direction was correct for all six series that were examined, but the size of the shift was underestimated for N-tert-butylacrylamide and HIPAAm and overestimated for HMAAm (8.1 against 5.1 C per 10 mol%).
+For the composition dependence, the held-out predictions were compared with the measured series. For DMAAm (17 rows from 5 papers), a shift of 5.1 C per 10 mol% was predicted, which is the same as the measured value. For N-ethylacrylamide, 3.9 C was predicted against 3.6 C measured. The direction was correct for all six series that were examined, but the size of the shift was underestimated for N-tert-butylacrylamide and HIPAAm and overestimated for HMAAm (8.1 against 5.1 C per 10 mol%).
 
 ![Composition series](../results/figures/trend2_series.png)
 

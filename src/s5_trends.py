@@ -43,9 +43,26 @@ def phys_rows(desc, nipam, name, fracs, conc, buffer=0):
     })
 
 
-def measured_slope(g, pnipam_ref):
+def pnipam_reference(rows, refs):
+    """PNIPAM value from the same paper measured under the same conditions.
+    Tries source + solvent + pH + concentration + table/figure location, then drops the
+    location, then uses the paper's mean PNIPAM value, then 32 C."""
+    def key(df, cols):
+        return df[cols].apply(lambda col: col.map(lambda v: "na" if pd.isna(v) else str(v))).agg("|".join, axis=1)
+    out = pd.Series(np.nan, index=rows.index)
+    for cols in (["source", "solvent", "pH", "polymer_conc", "source_location"],
+                 ["source", "solvent", "pH", "polymer_conc"], ["source"]):
+        table = refs.assign(k=key(refs, cols)).groupby("k").lcst_C.mean()
+        todo = out.isna()
+        if not todo.any():
+            break
+        out.loc[todo] = key(rows[todo], cols).map(table).values
+    return out.fillna(32.0)
+
+
+def measured_slope(g, refs):
     g = g.copy()
-    ref = g.source.map(pnipam_ref).fillna(32.0)
+    ref = pnipam_reference(g, refs)
     low = g[g.frac <= 0.35]
     use = low if len(low) else g
     d = use.lcst_C - ref.loc[use.index]
@@ -59,7 +76,7 @@ def main():
     nipam = desc.loc["NIPAM"]
     conc_med = float(D.conc_wt.median())
     comonomers = sorted(set(D.comonomer_name) - {"none"})
-    pnipam_ref = D[D.comonomer_name == "none"].groupby("source").lcst_C.mean()
+    pnipam_ref = D[D.comonomer_name == "none"]
 
     full = ridge().fit(D[PHYS], D.lcst_C)
 
@@ -93,7 +110,7 @@ def main():
         p = m.predict(g[PHYS])
         grid = np.linspace(0, g.frac.max() * 1.05, 50)
         curves[c] = (grid, m.predict(phys_rows(desc, nipam, c, grid, conc_med)))
-        ref = g.source.map(pnipam_ref).fillna(32.0)
+        ref = pnipam_reference(g, pnipam_ref)
         s_meas = float(((g.lcst_C - ref) * g.frac).sum() / (g.frac ** 2).sum())
         s_pred = float(((p - ref) * g.frac).sum() / (g.frac ** 2).sum())
         t2.append({"comonomer_name": c, "n_rows": len(g), "n_sources": g.source.nunique(),

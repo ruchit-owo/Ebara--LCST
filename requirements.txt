@@ -3,3 +3,4 @@ numpy==2.3.3
 scikit-learn==1.9.1
 matplotlib==3.10.6
 rdkit==2026.03.6
+scipy==1.18.1

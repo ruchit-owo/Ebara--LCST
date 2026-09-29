@@ -11,7 +11,7 @@ from sklearn.linear_model import LinearRegression
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from s4_model import ridge, CHARGED, SEED
-from s5_trends import phys_rows, PHYS, INK, INK2, BLUE, ORANGE, AQUA
+from s5_trends import phys_rows, pnipam_reference, PHYS, INK, INK2, BLUE, ORANGE, AQUA
 
 ROOT = Path(__file__).resolve().parents[1]
 PROC = ROOT / "data" / "processed"
@@ -112,7 +112,7 @@ def main():
         include_groups=False)
 
     hm = mt[mt.comonomer_name == "HMAAm"].copy()
-    ref = hm.source.map(mt[mt.comonomer_name == "none"].groupby("source").lcst_C.mean()).fillna(32.0)
+    ref = pnipam_reference(hm, mt[mt.comonomer_name == "none"])
     hm["dT"] = hm.lcst_C - ref
     src_slope = hm.groupby(["role", "source"]).apply(
         lambda g: pd.Series({"n": len(g), "slope_per_10mol": 0.1 * (g.dT * g.frac).sum() / (g.frac ** 2).sum()}),
