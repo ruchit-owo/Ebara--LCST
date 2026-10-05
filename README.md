@@ -1,4 +1,4 @@
-<!-- DRAFT written by AI as a starting point. Rewrite in my own voice before anyone reads it (see SPEC.md Section 9). Passive voice, undergraduate style, as requested. -->
+>
 
 # Predicting the LCST of NIPAM copolymers
 
